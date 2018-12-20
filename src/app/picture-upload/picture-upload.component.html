@@ -1,0 +1,9 @@
+<input type="file" name="picture" ng2FileSelect [uploader]="uploader" #pictureFile />
+
+
+<button type="button" class="btn btn-success btn-s"
+                (click)=uploadClick(pictureFile.files)
+        [disabled]="!uploader.getNotUploadedItems().length" >
+    Upload an Image
+</button>
+

@@ -1,0 +1,10 @@
+<ul>
+    <li *ngFor="let picture of pictures">
+        <a routerLink="/detail/{{picture.id}}">
+    <img src="{{picture.filelink}}" width="200"/>
+        </a>
+
+    </li>
+</ul>
+
+<app-picture-detail [picture]="selectedPicture"></app-picture-detail>

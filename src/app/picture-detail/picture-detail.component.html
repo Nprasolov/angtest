@@ -1,0 +1,13 @@
+<div *ngIf="picture">
+<h3>{{picture.filename}}</h3>
+<h3>{{picture.filelink}}</h3>
+<h3>{{picture.likes}}</h3>
+
+<!--<input [(ngModel)]="picture.filename"/>
+<input [(ngModel)]="picture.filelink"/>
+-->
+
+<span *ngFor="let item of picture.exif| keyvalue">
+      {{item.key}}:{{item.value}}<br/>
+</span>
+</div>

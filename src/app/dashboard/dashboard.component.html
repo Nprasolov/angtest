@@ -1,0 +1,37 @@
+<div class="container">
+    <h3>Top Pictures</h3>
+    <div class="row">
+        <div class="col-md-8">
+            <div *ngFor="let picture of top_pictures"  >
+                <img src="{{picture.filelink}}" width="250" (click)="onSelect(picture,$event)"/>
+                <span class="glyphicon glyphicon-star">{{picture.likes}}</span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <app-picture-detail [picture]="selectedPicture"></app-picture-detail>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngFor="let picture of all_pictures" style="display: inline-block" >
+                <img src="{{picture.filelink}}" width="250" (click)="onSelect(picture,$event)"/>
+                <span class="glyphicon glyphicon-star">{{picture.likes}}</span>
+                <br/>
+                <span class="glyphicon glyphicon-arrow-up" (click)="ratingUp(picture)">Up</span>
+                <br/>
+                <span class="glyphicon glyphicon-arrow-down" (click)="ratingDown(picture)">Down</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <ul>
+            <li *ngFor="let picture of all_pictures" >
+                <span >{{picture.filename}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
